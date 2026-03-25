@@ -7,7 +7,12 @@ import ContactCTA from './ContactCTA';
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-slate-50 pb-[calc(5.5rem+env(safe-area-inset-bottom,0px))] md:pb-0">
+    <main className="min-h-screen overflow-x-hidden bg-slate-50">
+      <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/90 backdrop-blur">
+        <div className="container-section flex h-14 items-center justify-start">
+          <BrandLogo variant="section" />
+        </div>
+      </header>
       <HeroSection />
       <SpecialBonus />
       <CompanyBenefits />
@@ -33,28 +38,6 @@ export default function Home() {
           </a>
         </div>
       </footer>
-
-      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-slate-200/80 bg-white/95 shadow-[0_-8px_30px_rgba(15,23,42,0.12)] backdrop-blur-md md:hidden">
-        <div className="mx-auto max-w-lg px-3 pt-2 sm:px-4">
-          <p className="mb-1.5 text-center text-[10px] font-black tracking-wide text-red-600 sm:mb-2">
-            선착순 5명 · 마감 임박
-          </p>
-          <div className="flex items-stretch gap-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-1 sm:gap-3">
-            <a
-              href={TEL_HREF}
-              className="flex min-h-[48px] flex-1 touch-manipulation items-center justify-center rounded-full border border-[#0A2540]/20 bg-[#0A2540] px-3 py-3 text-center text-sm font-black text-white shadow-[0_8px_20px_rgba(10,37,64,0.25)] transition-all hover:brightness-110 active:scale-95"
-            >
-              전화하기
-            </a>
-            <a
-              href={SMS_HREF}
-              className="flex min-h-[48px] flex-1 touch-manipulation items-center justify-center rounded-full border border-[#FF6A00]/30 bg-[#FF6A00] px-3 py-3 text-center text-sm font-black text-white shadow-[0_8px_20px_rgba(255,106,0,0.28)] transition-all hover:brightness-110 active:scale-95"
-            >
-              문자 지원
-            </a>
-          </div>
-        </div>
-      </div>
     </main>
   );
 }

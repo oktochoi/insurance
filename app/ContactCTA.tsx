@@ -30,7 +30,7 @@ export default function ContactCTA() {
           </div>
 
           <h2 className="text-[clamp(1.35rem,4.5vw,3rem)] font-black leading-tight tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl">
-            🔥 지금 지원하면 10만원 즉시 지급
+            지금 지원하면 10만원 즉시 지급
           </h2>
           <p className="mt-3 text-base font-semibold text-amber-200 sm:text-lg md:text-xl">오늘 마감 가능성 있음</p>
           <p className="mt-2 text-base font-medium text-blue-100/90 sm:text-lg">

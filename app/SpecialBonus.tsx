@@ -30,7 +30,7 @@ export default function SpecialBonus() {
                 </span>
               </div>
               <p className="text-base font-bold text-gray-800">세미나 참석 시</p>
-              <p className="mt-1 text-3xl font-black tracking-tight text-red-600 md:text-4xl">10만원 즉시 지급</p>
+              <p className="mt-1 text-2xl font-black tracking-tight text-red-600 md:text-2xl sm:text-2xl">10만원 즉시 지급</p>
               <p className="mt-2 text-xs text-gray-500">세미나 참석만으로 바로 지급</p>
             </div>
             <div className="rounded-2xl border-2 border-dashed border-orange-300 bg-white/90 p-5 shadow-sm sm:p-6">
