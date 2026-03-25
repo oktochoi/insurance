@@ -92,8 +92,8 @@ export default function HeroSection() {
 
                 {/* 혜택 2종 — 한 줄 2열 · 패딩 최소 */}
                 <div className="min-w-0 rounded-2xl border border-slate-200/70 bg-white px-4 py-3 shadow-[0_10px_24px_rgba(15,23,42,0.06)]">
-                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
-                    <div className="min-w-0 flex items-start gap-3">
+                  <div className="grid grid-cols-2 gap-4 sm:gap-6">
+                    <div className="min-w-0 flex items-center gap-3">
                       <div className="min-w-0 flex flex-col gap-1">
                       <p className="text-[0.9375rem] sm:text-[1rem] font-semibold leading-[1.7] tracking-[-0.01875rem] text-[#222222]/90">
                         <span className="text-[#222222]/65">#</span> 보험 경력자 세미나 참석시
@@ -103,11 +103,11 @@ export default function HeroSection() {
                         <span className="text-[0.875rem] sm:text-[0.875rem]">즉시 지급</span>
                       </p>
                       </div>
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 text-[#111827]">
-                        <i className="ri-file-list-3-line text-[1.375rem]" aria-hidden />
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-[#111827]">
+                        <i className="ri-file-list-3-line text-[1.25rem]" aria-hidden />
                       </div>
                     </div>
-                    <div className="min-w-0 flex items-start gap-3">
+                    <div className="min-w-0 flex items-center gap-3">
                       <div className="min-w-0 flex flex-col gap-1">
                       <p className="text-[0.9375rem] sm:text-[0.875rem] font-semibold leading-[1.7] tracking-[-0.01875rem] text-[#222222]/90">
                         <span className="text-[#222222]/65">#</span> 보험 경력이 없어도 면접후
@@ -119,8 +119,8 @@ export default function HeroSection() {
                         <span className="text-[#FF6600] font-extrabold text-[1.125rem] sm:text-[1.25rem] leading-[1.7] tracking-[-0.01875rem]">10만원</span> 지급
                       </p>
                       </div>
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 text-[#111827]">
-                        <i className="ri-calendar-event-line text-[1.375rem]" aria-hidden />
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-[#111827]">
+                        <i className="ri-calendar-event-line text-[1.25rem]" aria-hidden />
                       </div>
                     </div>
                   </div>
