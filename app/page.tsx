@@ -9,8 +9,11 @@ export default function Home() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-slate-50">
       <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/90 backdrop-blur">
-        <div className="container-section flex h-14 items-center justify-start">
-          <BrandLogo variant="section" />
+        <div className="container-section flex h-14 items-center justify-center">
+          <BrandLogo
+            variant="section"
+            className="bg-transparent shadow-none hover:shadow-none hover:scale-100 rounded-none min-w-0 max-w-[100px] px-0 py-0 transition-none"
+          />
         </div>
       </header>
       <HeroSection />

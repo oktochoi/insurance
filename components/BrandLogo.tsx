@@ -29,7 +29,7 @@ const inner: Record<BrandLogoProps['variant'], string> = {
 };
 
 const imgClass: Record<BrandLogoProps['variant'], string> = {
-  hero: 'h-auto w-[72%] max-w-[120px] min-w-0 object-contain object-center md:max-w-[132px]',
+  hero: 'h-auto w-[72%] max-w-[100px] min-w-0 object-contain object-center md:max-w-[100px]',
   section: 'h-auto w-[72%] max-w-[104px] min-w-0 object-contain object-center md:max-w-[112px]',
   cta: 'h-auto w-[72%] max-w-[120px] min-w-0 object-contain object-center md:max-w-[136px]',
   footer: 'h-auto w-[72%] max-w-[76px] min-w-0 object-contain object-center md:max-w-[84px]',
@@ -42,8 +42,8 @@ export default function BrandLogo({ variant, className = '', priority = false }:
         <Image
           src="/logo.png"
           alt=""
-          width={140}
-          height={30}
+          width={40}
+          height={20}
           priority={priority}
           className={imgClass[variant]}
         />
