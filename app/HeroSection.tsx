@@ -37,17 +37,10 @@ export default function HeroSection() {
       <div className="hero-grain pointer-events-none absolute inset-0 opacity-0" aria-hidden />
 
       {/* 모바일: 첫 화면(100svh) 안에 CTA까지 — 데스크톱은 기존 여백 */}
-      <div className="container-section relative z-10 max-lg:min-h-[100svh] max-lg:min-h-[100dvh] max-lg:pt-[max(0.5rem,env(safe-area-inset-top))] max-lg:pb-3 lg:py-16">
+      <div className="container-section relative z-10 max-lg:min-h-[calc(100dvh-3.5rem)] max-lg:min-h-[calc(100svh-3.5rem)] max-lg:pt-[max(0.5rem,env(safe-area-inset-top))] max-lg:pb-3 lg:py-16">
         <div className="grid gap-8">
-          <div className="mx-auto flex w-full max-w-xl flex-col max-lg:max-h-[calc(100svh-env(safe-area-inset-top)-env(safe-area-inset-bottom)-0.75rem)] max-lg:justify-between lg:max-h-none lg:justify-start lg:gap-0">
+          <div className="mx-auto flex w-full max-w-xl flex-col max-lg:max-h-[calc(100svh-env(safe-area-inset-top)-env(safe-area-inset-bottom)-0.75rem-3.5rem)] max-lg:justify-between lg:max-h-none lg:justify-start lg:gap-0">
             <div className="min-h-0 max-lg:flex max-lg:min-h-0 max-lg:flex-1 max-lg:flex-col max-lg:pb-0.5">
-              {/* 로고 가운데 */}
-              <div className="flex flex-shrink-0 flex-col items-center">
-                <div className="flex justify-center">
-
-                </div>
-              </div>
-
               {/* 타이틀 */}
               <h1 className="mt-1 flex-shrink-0 text-center font-bold leading-[1.7] tracking-[-0.01875rem] text-[#111111] max-lg:mt-1 sm:mt-3 lg:mt-5 lg:text-center">
                 <span className="block text-[1.75rem] sm:text-[1.875rem] font-extrabold leading-[1.7] text-[#111111]">
@@ -78,7 +71,7 @@ export default function HeroSection() {
                   </p>
                 </div>
 
-                <div className="rounded-2xl border border-slate-200/70 bg-white px-2 1 shadow-[0_10px_24px_rgba(15,23,42,0.06)] sm:px-5">
+                <div className="rounded-2xl border border-slate-200/70 bg-white px-2 py-1 shadow-[0_10px_24px_rgba(15,23,42,0.06)] sm:px-5 sm:py-1">
                   <p className="text-center text-[0.9375rem] sm:text-[1rem] font-medium leading-[1.7] tracking-[-0.01875rem] text-[#333333] sm:text-center lg:text-center">신입 / 경력</p>
                   <div className="mt-2 flex flex-row items-center justify-center gap-2 sm:mt-3 sm:gap-3 lg:justify-center">
                     <span className="inline-flex shrink-0 items-center rounded-[6px] bg-[#F3F4F6] px-[10px]  text-[0.75rem] font-bold text-[#111827]">
@@ -106,7 +99,7 @@ export default function HeroSection() {
                       </p>
                       <p className="mt-0 text-[0.9375rem] sm:text-[1rem] font-bold leading-[1.7] tracking-[-0.01875rem] text-[#222222]">
                         <span className="text-[#FF6600] font-extrabold text-[1.125rem] sm:text-[1.25rem] leading-[1.7] tracking-[-0.01875rem]">10만원</span>{' '}
-                        <span className="sm:text-[0.9375rem]">즉시 지급</span>
+                        <span className="text-[0.875rem] sm:text-[0.875rem]">즉시 지급</span>
                       </p>
                       </div>
                       <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 text-[#111827]">
