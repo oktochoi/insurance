@@ -39,7 +39,7 @@ export default function BrandLogo({ variant, className = '', priority = false }:
   return (
     <div className={`${shell[variant]} ${className}`}>
       <div className={inner[variant]}>
-        <Image
+        <Image 
           src="/logo.png"
           alt=""
           width={40}
