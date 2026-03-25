@@ -29,12 +29,17 @@ module.exports = {
           '0%, 100%': { opacity: '0.15' },
           '50%': { opacity: '0.45' },
         },
+        'money-pulse': {
+          '0%, 100%': { filter: 'drop-shadow(0 0 6px rgba(250, 204, 21, 0.9))' },
+          '50%': { filter: 'drop-shadow(0 0 18px rgba(239, 68, 68, 0.95))' },
+        },
       },
       animation: {
         'pulse-glow': 'pulse-glow 2.2s ease-in-out infinite',
         'float-slow': 'float-slow 5s ease-in-out infinite',
         'drift': 'drift 18s ease-in-out infinite alternate',
         'twinkle': 'twinkle 4s ease-in-out infinite',
+        'money-pulse': 'money-pulse 2.4s ease-in-out infinite',
       },
     },
   },

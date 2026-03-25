@@ -1,22 +1,16 @@
 import BrandLogo from '../components/BrandLogo';
 import { CONTACT_PHONE_DISPLAY, SMS_HREF, TEL_HREF } from '../lib/contact';
 import HeroSection from './HeroSection';
-import CoreBenefits from './CoreBenefits';
 import SpecialBonus from './SpecialBonus';
-import JobDetails from './JobDetails';
 import CompanyBenefits from './CompanyBenefits';
-import ApplicationProcess from './ApplicationProcess';
 import ContactCTA from './ContactCTA';
 
 export default function Home() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-slate-50 pb-[calc(5.5rem+env(safe-area-inset-bottom,0px))] md:pb-0">
       <HeroSection />
-      <CoreBenefits />
       <SpecialBonus />
-      <JobDetails />
       <CompanyBenefits />
-      <ApplicationProcess />
       <ContactCTA />
       <footer className="border-t border-white/5 bg-[#081a2c] px-4 py-8 text-center sm:px-6 sm:py-10">
         <div className="mx-auto mb-5 flex justify-center">
