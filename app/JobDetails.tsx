@@ -1,5 +1,6 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
+import RevealOnScroll from '../components/RevealOnScroll';
+import SectionDivider from './SectionDivider';
 
 const jobs = [
   { icon: 'ri-customer-service-2-line', label: '보유 고객 상담', desc: '기존 보유 고객 대상 상담 업무' },
@@ -15,61 +16,58 @@ const conditions = [
 ];
 
 export default function JobDetails() {
-  const [visible, setVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([e]) => { if (e.isIntersecting) setVisible(true); },
-      { threshold: 0.1 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section ref={ref} className="bg-slate-50 py-16 px-5 md:px-8">
-      <div className="mx-auto max-w-6xl">
-      <div className={`text-center mb-10 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-        <h2 className="mb-2 text-2xl font-black tracking-tight text-gray-900 md:text-4xl">주요 업무 & 근무 조건</h2>
-        <div className="mx-auto h-1 w-16 rounded-full bg-[#0A2540]" />
-      </div>
-      <div className="mx-auto max-w-5xl">
-        <h3 className={`mb-4 text-lg font-black text-[#0A2540] md:text-2xl transition-all duration-700 delay-100 ${visible ? 'opacity-100' : 'opacity-0'}`}>주요 업무</h3>
-        <div className="mb-10 grid gap-4 md:grid-cols-2 md:gap-6">
-          {jobs.map((j, i) => (
-            <div
-              key={i}
-              className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_8px_20px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_26px_rgba(15,23,42,0.14)]"
-              style={{ transitionDelay: `${i * 100 + 200}ms`, opacity: visible ? 1 : 0, transform: visible ? 'none' : 'translateX(-16px)' }}
-            >
-              <div className="h-14 w-14 flex-shrink-0 rounded-xl bg-blue-50 flex items-center justify-center">
-                <i className={`${j.icon} text-[#0A2540] text-2xl`} />
-              </div>
-              <div>
-                <p className="text-base font-black text-gray-900">{j.label}</p>
-                <p className="text-sm text-gray-600">{j.desc}</p>
-              </div>
+    <section className="bg-slate-50">
+      <RevealOnScroll>
+        <div className="container-section section-y">
+          <div className="mb-8 text-center sm:mb-10">
+            <h2 className="mb-2 text-[clamp(1.25rem,3.5vw,2.25rem)] font-black tracking-tight text-gray-900 sm:text-3xl md:text-4xl">
+              주요 업무 & 근무 조건
+            </h2>
+            <div className="mx-auto h-1 w-16 rounded-full bg-[#0A2540]" />
+          </div>
+          <div className="mx-auto max-w-5xl">
+            <h3 className="mb-4 text-lg font-black text-[#0A2540] md:text-2xl">주요 업무</h3>
+            <div className="mb-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 md:gap-6">
+              {jobs.map((j, i) => (
+                <div
+                  key={i}
+                  className={`flex min-w-0 items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_28px_rgba(15,23,42,0.14)] sm:gap-4 sm:p-5 ${i === 1 ? 'ring-2 ring-[#FF6A00]/25' : ''}`}
+                >
+                  <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-[#0A2540]/8 text-[#0A2540]">
+                    <i className={`${j.icon} text-2xl`} />
+                  </div>
+                  <div>
+                    <p className="text-base font-black text-gray-900">{j.label}</p>
+                    <p className="text-sm font-medium text-gray-600">{j.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-        <h3 className={`mb-4 text-lg font-black text-[#0A2540] md:text-2xl transition-all duration-700 delay-400 ${visible ? 'opacity-100' : 'opacity-0'}`}>근무 조건</h3>
-        <div
-          className="grid grid-cols-2 gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_10px_24px_rgba(15,23,42,0.08)] md:gap-5 md:p-6"
-          style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.7s 0.5s' }}
-        >
-          {conditions.map((c, i) => (
-            <div key={i} className="flex flex-col items-center rounded-xl bg-slate-50 p-3 text-center">
-              <div className="mb-2 h-11 w-11 flex items-center justify-center">
-                <i className={`${c.icon} text-[#0A2540] text-2xl`} />
-              </div>
-              <span className="mb-1 text-xs text-gray-500">{c.label}</span>
-              <span className="text-sm font-black text-gray-900 md:text-base">{c.value}</span>
+            <h3 className="mb-4 text-lg font-black text-[#0A2540] md:text-2xl">근무 조건</h3>
+            <div className="grid grid-cols-2 gap-2 rounded-2xl border border-slate-200 bg-gradient-to-b from-white to-slate-50 p-4 shadow-inner sm:gap-3 md:gap-5 md:p-6">
+              {conditions.map((c, i) => (
+                <div
+                  key={i}
+                  className="flex min-w-0 flex-col items-center rounded-xl bg-white/90 p-2.5 text-center shadow-sm sm:p-3"
+                >
+                  <div className="mb-1.5 flex h-10 w-10 items-center justify-center text-[#0A2540] sm:mb-2 sm:h-11 sm:w-11">
+                    <i className={`${c.icon} text-xl sm:text-2xl`} />
+                  </div>
+                  <span className="mb-0.5 text-[11px] font-medium leading-tight text-gray-500 sm:mb-1 sm:text-xs">
+                    {c.label}
+                  </span>
+                  <span className="break-words text-xs font-black leading-snug text-gray-900 sm:text-sm md:text-base">
+                    {c.value}
+                  </span>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-      </div>
+      </RevealOnScroll>
+
+      <SectionDivider fillClass="text-white" />
     </section>
   );
 }

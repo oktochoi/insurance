@@ -1,74 +1,77 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
+import BrandLogo from '../components/BrandLogo';
+import RevealOnScroll from '../components/RevealOnScroll';
+import { CONTACT_PHONE_DISPLAY, SMS_HREF, TEL_HREF } from '../lib/contact';
 
 export default function ContactCTA() {
-  const [visible, setVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([e]) => { if (e.isIntersecting) setVisible(true); },
-      { threshold: 0.2 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section ref={ref} id="apply-section" className="bg-gradient-to-br from-[#0A2540] via-[#0B2E52] to-[#081B33] py-16 px-5 md:px-8">
-      <div className="mx-auto max-w-6xl text-center">
-        <div className="mx-auto max-w-2xl">
-        <div className={`transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <span className="inline-flex items-center gap-1 rounded-full bg-yellow-300 px-4 py-1.5 text-xs font-black tracking-wide text-gray-900 shadow-md">
-            지금 지원하면
-          </span>
-          <h2 className="mt-4 mb-2 text-3xl font-black tracking-tight text-white md:text-5xl">
-            10만원 즉시 지급!
+    <section
+      id="apply-section"
+      className="relative overflow-hidden bg-gradient-to-br from-[#0A2540] via-[#0c2f52] to-[#071426] py-12 sm:py-14 md:py-16 lg:py-20"
+    >
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,106,0,0.18),transparent_55%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(59,130,246,0.12),transparent_45%)]" />
+
+      <RevealOnScroll className="container-section relative text-center">
+        <div className="mb-8 flex justify-center">
+          <BrandLogo variant="cta" />
+        </div>
+
+        <div className="mx-auto max-w-3xl">
+          <div className="mb-4 flex flex-wrap items-center justify-center gap-2">
+            <span className="rounded-full border border-[#FF6A00]/50 bg-[#FF6A00]/20 px-3 py-1 text-[11px] font-black tracking-wide text-[#FF6A00]">
+              선착순 5명 모집
+            </span>
+            <span className="rounded-full bg-yellow-300 px-3 py-1 text-[11px] font-black text-gray-900 shadow-sm">
+              지금 지원하면
+            </span>
+          </div>
+
+          <h2 className="text-[clamp(1.35rem,4.5vw,3rem)] font-black leading-tight tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl">
+            🔥 지금 지원하면 10만원 즉시 지급
           </h2>
-          <p className="mb-8 text-sm text-blue-100 md:text-base">
-            모집 인원 <span className="font-bold text-yellow-300">5명</span> 한정 · 선착순 마감
+          <p className="mt-3 text-sm font-semibold text-amber-200 sm:text-base md:text-lg">오늘 마감 가능성 있음</p>
+          <p className="mt-2 text-sm font-medium text-blue-100/90">
+            모집 인원 <span className="font-black text-yellow-300">5명</span> 한정 · 선착순 마감
           </p>
         </div>
-        <div
-          className={`flex flex-col gap-4 transition-all duration-700 delay-300 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-        >
+
+        <div className="mx-auto mt-8 flex max-w-2xl flex-col gap-3 sm:mt-10 sm:gap-4">
           <a
-            href="tel:010-4229-7302"
-            className="flex items-center justify-center gap-3 whitespace-nowrap rounded-full bg-[#FF6A00] py-4 text-lg font-black text-white shadow-[0_14px_30px_rgba(255,106,0,0.35)] transition-all duration-300 hover:scale-105 hover:brightness-110 hover:shadow-[0_18px_38px_rgba(255,106,0,0.52)] active:scale-95"
+            href={TEL_HREF}
+            className="animate-pulse-glow flex min-h-[52px] w-full touch-manipulation items-center justify-center gap-3 rounded-full bg-[#FF6A00] px-4 py-3.5 text-base font-black text-white shadow-[0_18px_44px_rgba(255,106,0,0.45)] transition-all duration-300 hover:scale-[1.02] hover:brightness-110 active:scale-95 sm:min-h-14 sm:py-4 sm:text-lg md:py-5 md:text-xl"
           >
-            <div className="w-6 h-6 flex items-center justify-center">
-              <i className="ri-phone-fill text-xl" />
-            </div>
+            <i className="ri-phone-line shrink-0 text-xl sm:text-2xl" />
             전화 상담하기
           </a>
           <a
-            href="sms:010-4229-7302?body=채용 지원 문의드립니다."
-            className="flex items-center justify-center gap-3 whitespace-nowrap rounded-full border border-white/30 bg-white/95 py-4 text-lg font-black text-[#0A2540] shadow-[0_14px_30px_rgba(8,27,51,0.2)] transition-all duration-300 hover:scale-105 hover:bg-white active:scale-95"
+            href={SMS_HREF}
+            className="flex min-h-[52px] w-full touch-manipulation items-center justify-center gap-3 rounded-full border-2 border-white/35 bg-white px-4 py-3.5 text-base font-black text-[#0A2540] shadow-[0_14px_34px_rgba(0,0,0,0.2)] transition-all duration-300 hover:scale-[1.02] hover:bg-blue-50 active:scale-95 sm:min-h-14 sm:py-4 sm:text-lg md:py-5 md:text-xl"
           >
-            <div className="w-6 h-6 flex items-center justify-center">
-              <i className="ri-message-2-line text-xl" />
-            </div>
+            <i className="ri-message-2-line shrink-0 text-xl sm:text-2xl" />
             문자로 지원하기
           </a>
         </div>
-        <div className={`mt-10 rounded-2xl border border-white/15 bg-white/10 p-5 backdrop-blur-sm transition-all duration-700 delay-500 ${visible ? 'opacity-100' : 'opacity-0'}`}>
-          <p className="mb-3 text-xs font-semibold text-blue-100">연락처</p>
-          <a href="tel:010-4229-7302" className="mb-3 flex cursor-pointer items-center justify-center gap-2 text-xl font-bold text-white transition-colors hover:text-yellow-300">
-            <div className="w-5 h-5 flex items-center justify-center">
-              <i className="ri-phone-line text-[#FF6A00] text-lg" />
-            </div>
-            010-4229-7302
+
+        <div className="mx-auto mt-8 max-w-2xl rounded-2xl border border-white/15 bg-white/10 p-5 backdrop-blur-sm sm:mt-10 sm:p-6">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-blue-100/90">연락처</p>
+          <a
+            href={TEL_HREF}
+            className="mb-3 flex cursor-pointer flex-wrap items-center justify-center gap-2 text-xl font-black tabular-nums text-white transition-colors hover:text-yellow-300 sm:text-2xl"
+          >
+            <i className="ri-phone-line shrink-0 text-[#FF6A00] text-xl sm:text-2xl" />
+            {CONTACT_PHONE_DISPLAY}
           </a>
-          <a href="mailto:dasanmy75@naver.com" className="flex cursor-pointer items-center justify-center gap-2 text-sm text-blue-100 transition-colors hover:text-white">
-            <div className="w-4 h-4 flex items-center justify-center">
-              <i className="ri-mail-line text-[#FF6A00] text-base" />
-            </div>
+          <a
+            href="mailto:dasanmy75@naver.com"
+            className="flex cursor-pointer items-center justify-center gap-2 text-sm font-medium text-blue-100 transition-colors hover:text-white"
+          >
+            <i className="ri-mail-line text-[#FF6A00] text-lg" />
             dasanmy75@naver.com
           </a>
         </div>
-        <p className="mt-6 text-xs text-blue-200">평일 09:00 ~ 17:00 상담 가능</p>
-        </div>
-      </div>
+        <p className="mt-6 text-xs font-medium text-blue-200/90">평일 09:00 ~ 17:00 상담 가능</p>
+      </RevealOnScroll>
     </section>
   );
 }
