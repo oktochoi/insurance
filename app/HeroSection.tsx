@@ -37,9 +37,10 @@ export default function HeroSection() {
       <div className="hero-grain pointer-events-none absolute inset-0 opacity-0" aria-hidden />
 
       {/* 모바일: 첫 화면(100svh) 안에 CTA까지 — 데스크톱은 기존 여백 */}
-      <div className="container-section relative z-10 max-lg:min-h-[calc(100dvh-3.5rem)] max-lg:min-h-[calc(100svh-3.5rem)] max-lg:pt-[max(0.5rem,env(safe-area-inset-top))] max-lg:pb-3 lg:py-16">
-        <div className="grid gap-8">
-          <div className="mx-auto flex w-full max-w-xl flex-col max-lg:px-2 max-lg:max-h-[calc(100svh-env(safe-area-inset-top)-env(safe-area-inset-bottom)-0.75rem-3.5rem)] max-lg:justify-between lg:max-h-none lg:justify-start lg:gap-0">
+      <div className="w-full flex justify-center px-4">
+        <div className="w-full max-w-[480px] relative z-10 max-lg:min-h-[calc(100dvh-3.5rem)] max-lg:min-h-[calc(100svh-3.5rem)] max-lg:pt-[max(0.5rem,env(safe-area-inset-top))] max-lg:pb-3 lg:py-16">
+          <div className="grid gap-6">
+            <div className="mx-auto flex w-full flex-col max-lg:max-h-[calc(100svh-env(safe-area-inset-top)-env(safe-area-inset-bottom)-0.75rem-3.5rem)] max-lg:justify-between lg:max-h-none lg:justify-start lg:gap-0">
             <div className="min-h-0 max-lg:flex max-lg:min-h-0 max-lg:flex-1 max-lg:flex-col max-lg:pb-0.5">
               {/* 타이틀 */}
               <h1 className="mt-1 flex-shrink-0 text-center font-bold leading-[1.7] tracking-[-0.01875rem] text-[#111111] max-lg:mt-1 sm:mt-3 lg:mt-5 lg:text-center">
@@ -146,18 +147,19 @@ export default function HeroSection() {
             </div>
 
             {/* CTA */}
-            <div className="mt-4 flex-shrink-0 max-lg:mt-3 lg:mt-7">
+            <div className="mt-2 flex-shrink-0 max-lg:mt-2 lg:mt-6">
 
               <p className="mt-1.5 hidden text-center text-[0.9375rem] sm:text-[1rem] font-medium leading-[1.7] tracking-[-0.01875rem] text-[#4B5563] sm:mt-2 sm:block sm:text-left lg:text-center">
                 오늘 지원 시 <span className="font-extrabold text-[#FF6600] text-[1.125rem] sm:text-[1.25rem] leading-[1.7] tracking-[-0.01875rem]">10만원</span> 지급 / 선착순 마감 임박
               </p>
               <a
                 href={TEL_HREF}
-                className="flex h-11 pt-1 w-full touch-manipulation items-center justify-center rounded-full bg-[#FF6600] px-4 pt-1 text-[1.125rem] font-bold text-white shadow-sm transition duration-200 hover:brightness-[1.02] active:scale-[0.99] max-lg:h-11 sm:h-[52px] sm:px-6 lg:min-h-14"
+                className="flex h-11 w-full touch-manipulation items-center justify-center rounded-full bg-[#FF6600] px-4 text-[1.125rem] font-bold text-white shadow-sm transition duration-200 hover:brightness-[1.02] active:scale-[0.99] max-lg:h-11 sm:h-[52px] sm:px-6 lg:min-h-14"
               >
                 지금 바로 지원하기 →
               </a>
             </div>
+          </div>
           </div>
         </div>
       </div>
