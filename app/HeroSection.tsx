@@ -60,7 +60,7 @@ export default function HeroSection() {
 
 
               <div className="mt-2 min-h-0 flex-1 space-y-3 max-lg:mt-1 sm:mt-3 sm:space-y-4 lg:mt-6 lg:space-y-5">
-                <div className="rounded-2xl border border-slate-200/70 bg-white px-4 py-1 shadow-[0_10px_24px_rgba(15,23,42,0.06)]">
+                <div className="min-w-0 rounded-2xl border border-slate-200/70 bg-white px-4 py-1 shadow-[0_10px_24px_rgba(15,23,42,0.06)]">
                   <p className="text-center text-[0.9375rem] sm:text-[1rem] font-semibold leading-[1.7] tracking-[-0.01875rem] text-[#222222] sm:text-center lg:text-center">
                     기계약 고객 DB 간단 상담
                   </p>
@@ -72,7 +72,7 @@ export default function HeroSection() {
                   </p>
                 </div>
 
-                <div className="rounded-2xl border border-slate-200/70 bg-white px-2 py-1 shadow-[0_10px_24px_rgba(15,23,42,0.06)] sm:px-5 sm:py-1">
+                <div className="min-w-0 rounded-2xl border border-slate-200/70 bg-white px-2 py-1 shadow-[0_10px_24px_rgba(15,23,42,0.06)] sm:px-5 sm:py-1">
                   <p className="text-center text-[0.9375rem] sm:text-[1rem] font-medium leading-[1.7] tracking-[-0.01875rem] text-[#333333] sm:text-center lg:text-center">신입 / 경력</p>
                   <div className="mt-2 flex flex-row items-center justify-center gap-2 sm:mt-3 sm:gap-3 lg:justify-center">
                     <span className="inline-flex shrink-0 items-center rounded-[6px] bg-[#F3F4F6] px-[10px]  text-[0.75rem] font-bold text-[#111827]">
@@ -91,8 +91,8 @@ export default function HeroSection() {
                 </div>
 
                 {/* 혜택 2종 — 한 줄 2열 · 패딩 최소 */}
-                <div className="rounded-2xl border border-slate-200/70 bg-white px-4 py-3 shadow-[0_10px_24px_rgba(15,23,42,0.06)]">
-                  <div className="grid grid-cols-2 gap-6">
+                <div className="min-w-0 rounded-2xl border border-slate-200/70 bg-white px-4 py-3 shadow-[0_10px_24px_rgba(15,23,42,0.06)]">
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
                     <div className="min-w-0 flex items-start gap-3">
                       <div className="min-w-0 flex flex-col gap-1">
                       <p className="text-[0.9375rem] sm:text-[1rem] font-semibold leading-[1.7] tracking-[-0.01875rem] text-[#222222]/90">
@@ -126,8 +126,8 @@ export default function HeroSection() {
                   </div>
                 </div>
 
-                <div className="rounded-2xl bg-[#FFF7ED] px-4 py-2 shadow-[0_10px_24px_rgba(15,23,42,0.06)]">
-                  <p className="whitespace-nowrap text-[0.8125rem] sm:text-[0.875rem] font-semibold italic leading-[1.7] tracking-[-0.01875rem] text-[#4B5563]">
+                <div className="min-w-0 rounded-2xl bg-[#FFF7ED] px-4 py-2 shadow-[0_10px_24px_rgba(15,23,42,0.06)]">
+                  <p className="break-keep whitespace-normal text-[0.8125rem] sm:text-[0.875rem] font-semibold italic leading-[1.7] tracking-[-0.01875rem] text-[#4B5563]">
                     <i className="ri-database-2-line mr-1 text-[1rem] text-[#111827]" aria-hidden />
                     DB 이제 돈주고 사지 마세요!! - 기계약 고객 DB <span className="font-semibold text-[#FF6600]">무료</span> 제공 -
                   </p>
@@ -149,7 +149,7 @@ export default function HeroSection() {
             {/* CTA */}
             <div className="mt-2 flex-shrink-0 max-lg:mt-2 lg:mt-6">
 
-              <p className="mt-1.5 hidden text-center text-[0.9375rem] sm:text-[1rem] font-medium leading-[1.7] tracking-[-0.01875rem] text-[#4B5563] sm:mt-2 sm:block sm:text-left lg:text-center">
+              <p className="mt-1.5 hidden text-center text-[0.9375rem] sm:text-[1rem] font-medium leading-[1.7] tracking-[-0.01875rem] text-[#4B5563] sm:mt-2 sm:block lg:text-center">
                 오늘 지원 시 <span className="font-extrabold text-[#FF6600] text-[1.125rem] sm:text-[1.25rem] leading-[1.7] tracking-[-0.01875rem]">10만원</span> 지급 / 선착순 마감 임박
               </p>
               <a
