@@ -26,10 +26,10 @@ export default function Home() {
           </a>
           <span className="hidden text-slate-700 sm:inline">|</span>
           <a
-            href="mailto:dasanmy75@naver.com"
+            href="mailto:rose7348@naver.com"
             className="cursor-pointer break-all text-xs text-slate-400 transition-colors hover:text-slate-200"
           >
-            dasanmy75@naver.com
+            rose7348@naver.com
           </a>
         </div>
       </footer>

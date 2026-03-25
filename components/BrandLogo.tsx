@@ -14,7 +14,7 @@ const cardBase =
   'hover:scale-[1.03] hover:shadow-[0_12px_32px_rgba(0,0,0,0.2),0_0_28px_rgba(255,255,255,0.2)]';
 
 const shell: Record<BrandLogoProps['variant'], string> = {
-  hero: `${cardBase} min-w-[112px] max-w-[188px] px-2.5 py-2 md:min-w-[120px] md:max-w-[200px] md:px-3 md:py-2.5`,
+  hero: `${cardBase} min-w-[112px] max-w-[188px] px-2.5 py-1.5 md:min-w-[120px] md:max-w-[200px] md:px-3 md:py-2`,
   section: `${cardBase} min-w-[104px] max-w-[168px] px-2.5 py-2 md:px-3 md:py-2.5`,
   cta: `${cardBase} min-w-[112px] max-w-[188px] px-2.5 py-2 md:min-w-[120px] md:max-w-[200px] md:px-3 md:py-3`,
   footer: `${cardBase} min-w-[80px] max-w-[120px] px-2 py-1.5 md:min-w-[88px] md:max-w-[132px] md:px-2.5 md:py-2 hover:scale-[1.02]`,
@@ -42,8 +42,8 @@ export default function BrandLogo({ variant, className = '', priority = false }:
         <Image
           src="/logo.png"
           alt=""
-          width={180}
-          height={46}
+          width={140}
+          height={30}
           priority={priority}
           className={imgClass[variant]}
         />
